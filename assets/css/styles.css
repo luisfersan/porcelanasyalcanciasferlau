@@ -2,13 +2,16 @@
 /* Estilo General */
 *{
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
 html,body{
-    color: #FFFFFF;
     background: linear-gradient(315deg, var(--main-bg-color) 0%, var(--gradient-bg-color) 75%);
+    color: #FFFFFF;
     display: grid;
     font-family: 'Outfit', sans-serif;
     height: 100%;
@@ -16,16 +19,37 @@ html,body{
     width: 100%;
 }
 
-/* Estilo del Menú de Navegación */
-
-.navbar {
-    padding-bottom: 50px;
+/* Estilo del Container */
+.container {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "navbar"
+        "filter"
+        "main"
+        "footer";
+        height: 100vh;
 }
 
+/* Estilo del Navbar*/
+.navbar {
+    align-items: center;
+    background-color: #80c8b5;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: navbar;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    border: black solid;            /*QUITAR AL FINAL*/
+}
+
+/* Estilo del logo */
 .navbar-logo{
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
     height: 400px;
-    perspective: 1000px;
-    position: relative;
+    padding: 1rem;
     transform-style: preserve-3d;
 }
 
@@ -34,8 +58,8 @@ html,body{
     border-radius: 5px;
     position: absolute;
     transition: 1s;
-    width: 300px;
-    height: 300px;
+    width: 220px;
+    height: 220px;
 }
 
 .navbar-logo img:nth-child(2) {
@@ -48,4 +72,40 @@ html,body{
 
 .navbar-logo:hover img:nth-child(2) {
     transform: rotateY(0deg);
+}
+
+#expand-toggle {
+    display: none;
+}
+
+/* Estilo de la Hamburguesa */
+.menu-icon {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+
+/* Estilo del Menú de Navegación */
+.navbar-nav {
+    background-color: #415a77;
+    height: 0px;
+    transition: all 0.5s;
+    width: 100%;
+}
+
+.nav-link {
+    color: #fff;
+    display: block;
+    padding: 1rem; 
+}
+
+.nav-link:hover {
+    background-color: #e0e1dd;
+    color: #000;
+}
+
+#expand-toggle:checked ~ .navbar-nav {
+    height: auto;
+    padding: 1rem 0;
 }
