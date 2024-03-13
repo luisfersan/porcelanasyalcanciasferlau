@@ -1,0 +1,51 @@
+
+/* Estilo General */
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html,body{
+    color: #FFFFFF;
+    background: linear-gradient(315deg, var(--main-bg-color) 0%, var(--gradient-bg-color) 75%);
+    display: grid;
+    font-family: 'Outfit', sans-serif;
+    height: 100%;
+    place-items: left;
+    width: 100%;
+}
+
+/* Estilo del Menú de Navegación */
+
+.navbar {
+    padding-bottom: 50px;
+}
+
+.navbar-logo{
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.navbar-logo img{
+    backface-visibility: hidden;
+    border-radius: 5px;
+    position: absolute;
+    transition: 1s;
+    width: 300px;
+    height: 300px;
+}
+
+.navbar-logo img:nth-child(2) {
+    transform: rotateY(180deg);
+}
+
+.navbar-logo:hover img:nth-child(1) {
+    transform: rotateY(-180deg);
+}
+
+.navbar-logo:hover img:nth-child(2) {
+    transform: rotateY(0deg);
+}
