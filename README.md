@@ -1,6 +1,6 @@
 # Porcelanas y Alcancías FerLau ![Pintando porcelanas](image-4.png)
 
-## Página Web de emprendimiento de pintura de porcelanas y alcancías en Yeso ![alt text](image-5.png)
+## Emprendimiento de Pintura de Porcelanas y Alcancías en Yeso ![alt text](image-5.png)
 
 <br/>
 
