@@ -1,6 +1,6 @@
-# Porcelanas y Alcancías FerLau ![Pintando porcelanas](image-4.png)
+# Porcelanas y Alcancías FerLau ![Pintando porcelanas](image-1.png)
 
-## Emprendimiento de Pintura de Porcelanas y Alcancías en Yeso ![alt text](image-5.png)
+## Emprendimiento de Pintura de Porcelanas y Alcancías en Yeso ![Figura en Yeso](image-2.png)
 
 <br/>
 
@@ -23,7 +23,5 @@
 
 **Luis Fernando Sanchez F. ⚡**
 
-Sígueme en mis redes sociales:
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luis-fernando-sanchez-f-67369b2b)[![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/luisfersan)
+Sígueme en mis redes sociales: [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luis-fernando-sanchez-f-67369b2b)[![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/luisfersan)
 <br>
