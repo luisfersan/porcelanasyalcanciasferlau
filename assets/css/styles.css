@@ -1,65 +1,77 @@
 
 /* Estilo General */
-*{
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    list-style: none;
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
     text-decoration: none;
-}
-
-html,body{
-    background: linear-gradient(315deg, var(--main-bg-color) 0%, var(--gradient-bg-color) 75%);
-    color: #FFFFFF;
-    display: grid;
-    font-family: 'Outfit', sans-serif;
-    height: 100%;
-    place-items: left;
-    width: 100%;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 1.2rem;
 }
 
 /* Estilo del Container */
 .container {
+    height: 100vh;
     display: grid;
-    grid-template-rows: auto auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "navbar"
-        "filter"
         "main"
         "footer";
-        height: 100vh;
+    background-image: url(../img/imgfondo1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Estilo del Navbar*/
+
 .navbar {
-    align-items: center;
-    background-color: #80c8b5;
-    display: flex;
-    flex-wrap: wrap;
     grid-area: navbar;
+    display: flex;
     justify-content: space-between;
-    padding-bottom: 50px;
-    border: black solid;            /*QUITAR AL FINAL*/
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Estilo del logo */
-.navbar-logo{
-    color: #fff;
-    font-size: 1.6rem;
-    font-weight: 400;
-    height: 400px;
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 1rem;
-    transform-style: preserve-3d;
+    color: #ff533d;
+}
+
+.icon-logo {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    
+}
+
+.icon-logo:hover {
+    animation: animate-logo-flip .3s linear infinite alternate;
 }
 
 .navbar-logo img{
     backface-visibility: hidden;
     border-radius: 5px;
-    position: absolute;
     transition: 1s;
-    width: 220px;
-    height: 220px;
+    width: 15rem;
+    height: 15rem;
+    cursor: pointer;
+}
+
+.navbar-logo h3 {
+    animation: animate-logo-text 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2.5s both;
+}
+
+.navbar-logo span {
+    color: #0f1626;
 }
 
 .navbar-logo img:nth-child(2) {
@@ -79,33 +91,289 @@ html,body{
 }
 
 /* Estilo de la Hamburguesa */
+
 .menu-icon {
     color: #fff;
-    cursor: pointer;
     font-size: 1.8rem;
     padding: 1rem;
+    cursor: pointer;
 }
 
 /* Estilo del Menú de Navegación */
+
 .navbar-nav {
-    background-color: #415a77;
-    height: 0px;
-    transition: all 0.5s;
+    position: relative;
     width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all 0.2s ease-out;
 }
 
 .nav-link {
-    color: #fff;
     display: block;
-    padding: 1rem; 
+    padding: 1rem;
+    color: black;
+    transition: all 0.3s ease-out;
 }
 
 .nav-link:hover {
-    background-color: #e0e1dd;
-    color: #000;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #0f1626;
 }
 
 #expand-toggle:checked ~ .navbar-nav {
     height: auto;
+    opacity: 1;
     padding: 1rem 0;
+}
+
+/* Estilo del Main */ 
+
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    animation: animate-main-container 1.5s
+        cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    overflow-y: auto;
+    height: calc(100vh - 18rem);
+}
+
+.card {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #edf2f4;
+    display: flex;
+    filter: saturate(0%);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    transition: all 0.3s ease-out;
+}
+
+.card:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+    filter: saturate(100%);
+}
+
+.card-img {
+    object-fit: cover;
+    width: 50%;
+    
+}
+
+.card-divider{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+}
+
+.card-body {
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.card-body h3 {
+    color: #ff533d;
+}
+
+.card-body p {
+    color: #0f1626;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Estilo de la Paginación */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.1rem;
+    padding: 0.5rem;
+}
+
+.page-link{
+    background-color: #219ebc;
+    padding: 0.7rem 1rem;
+    transition: all 0.3s ease-out;
+}
+
+.page-link:first-child {                                            
+    border-radius: 0.7rem 0 0 0.7rem;
+}
+
+.page-link:last-child {
+    border-radius: 0 0.7rem 0.7rem 0;
+}
+
+.page-link:hover {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+/* Estilo del Footer */
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-icon a {
+    font-size: 1.5rem;
+    margin: 0 0.3rem;
+    color: black;
+}
+
+.footer-icon i:hover {
+    animation: animate-footer-icon 0.8s alternate;
+    color: #ff533d;
+}
+
+footer h4 {
+    color: #4d3dff;
+}
+
+footer h4 span {
+    color: #0f1626;
+}
+
+footer p {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: black;
+}
+
+/* Media Queries Tablet */
+
+@media screen and (min-width: 576px) {
+    .container 
+    {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "navbar navbar"
+            "main main"
+            "footer footer";
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .navbar-nav {
+        height: auto;
+        width: auto;
+        display: flex;
+        margin-right: 0.5rem;
+        opacity: 1;
+    }
+    .nav-link {
+        font-size: 0.8rem;
+    }
+    .filter {
+        justify-content: left;
+    }
+}
+
+/* Estilos Media Queries Desktop */
+
+@media screen and (min-width: 992px) {
+    .container {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "navbar main"
+            "navbar main"
+            "footer main";
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .navbar-logo {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .icon-logo {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .main {
+        margin-left: 0.1rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: calc(100vh - 7rem);
+    }
+}
+
+/* Media Queries de Animaciones */
+
+@keyframes animate-footer-icon {
+    0%,
+    100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+    15% {
+        transform: translateX(-9px) rotate(-6deg);
+    }
+    30% {
+        transform: translateX(7px) rotate(6deg);
+    }
+    45% {
+        transform: translateX(-7px) rotate(-3.6deg);
+    }
+    60% {
+        transform: translateX(5px) rotate(2.4deg);
+    }
+    75% {
+        transform: translateX(-5px) rotate(-1.2deg);
+    }
+}
+
+@keyframes animate-main-container {
+    0% {
+        transform: rotateY(70deg);
+        transform-origin: right;
+        opacity: 0;
+    }
+    100% {
+        transform: rotateY(0);
+        transform-origin: right;
+        opacity: 1;
+    }
 }
