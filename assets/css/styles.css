@@ -290,6 +290,9 @@ footer p {
     .filter {
         justify-content: left;
     }
+    .cards{
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* Estilos Media Queries Desktop */
